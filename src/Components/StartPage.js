@@ -1,11 +1,13 @@
 import React from 'react'
-
-const StartPage = () => {
+import { Link } from 'react-router-dom'
+const StartPage = (props) => {
   return (
     <div className="container">
         <h2>Quizzical</h2>
         <p>Test your knowledge on various topics</p>
-        <button>Start quiz</button>
+        <button>
+         <Link to='/quizz'>Start Quiz</Link>
+        </button>
     </div>
   )
 }
