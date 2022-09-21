@@ -34,13 +34,18 @@ body{
 
 .container button{
   background-color: #4d5b9e;
-  color: white;
   border: none;
   width: 193px;
   height: 52px;
   border-radius: 15px;
-  font-size: 16px;
   cursor: pointer;
+}
+
+.container button a{
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+
 }
 
 .container button:active{
