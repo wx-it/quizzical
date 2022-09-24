@@ -12,7 +12,7 @@ const Quizz = () => {
     const categories = await fetch('https://opentdb.com/api_category.php')
     const response = await categories.json()
     const data = response.trivia_categories
-    setCategories(prevCategories=> data )
+    setCategories(prevCategories=> data)
   }
 
   return (
