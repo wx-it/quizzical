@@ -1,6 +1,7 @@
-import StartPage from "./Components/StartPage";
-import Quizz from "./Components/Quizz";
+import StartPage from "./Pages/StartPage";
+import Quizz from "./Pages/Quizz";
 import {Route, Routes} from 'react-router-dom';
+import { useEffect } from "react";
 
 function App() {
 
