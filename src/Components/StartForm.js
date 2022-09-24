@@ -18,18 +18,42 @@ const StartForm = ({categories}) => {
     console.log(data)
   return (
     <div>
-        <form onChange={handleData}>
-            <input type="text" name='name' value={data.name} />
-            <select name="category" id="" value={data.category}>
+        <form>
+            <input 
+            type="text" 
+            name='name' 
+            value={data.name}  
+            onChange={handleData} 
+            />
+            
+            <select 
+            name="category" 
+            id="" 
+            value={data.category}  
+            onChange={handleData}
+            >
                 <option default>please select a category</option>
+            
                 {
                 categories.map((category)=>(
-                        <option key={category.id} value={category.id}>
+                        <option key={category.id} value={category.name}>
                             {category.name}
                             </option>
                     )
                 )}
             </select>
+
+            <select 
+            name="difficulty"
+            id=""
+            value={data.difficulty}
+            onChange={handleData}
+            >
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
         </form>
     </div>
   )
