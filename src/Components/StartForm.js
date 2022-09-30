@@ -18,7 +18,7 @@ const StartForm = ({categories}) => {
     console.log(data)
   return (
     <div>
-        <form>
+        <form className='form-container' >
             <input 
             type="text" 
             name='name' 
