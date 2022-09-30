@@ -22,6 +22,7 @@ const StartForm = ({categories}) => {
             <input 
             type="text" 
             name='name' 
+            placeholder='Name'
             value={data.name}  
             onChange={handleData} 
             />
@@ -32,7 +33,7 @@ const StartForm = ({categories}) => {
             value={data.category}  
             onChange={handleData}
             >
-                <option default>please select a category</option>
+                <option default>Select a category</option>
             
                 {
                 categories.map((category)=>(
@@ -49,6 +50,7 @@ const StartForm = ({categories}) => {
             value={data.difficulty}
             onChange={handleData}
             >
+                <option default>Difficulty</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
