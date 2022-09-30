@@ -1,6 +1,5 @@
 import StartForm from '../Components/StartForm'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const Quizz = () => {
 
@@ -22,7 +21,6 @@ const Quizz = () => {
         <h1>Quizzical</h1>
         <p>Pick your preference to start</p>
         <StartForm categories={categories} />
-        <button><Link>Start</Link></button>
      </div>
     </div>
   )

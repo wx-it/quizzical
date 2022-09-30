@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const StartForm = ({categories}) => {
     const [data, setData] = useState({
@@ -15,10 +16,17 @@ const StartForm = ({categories}) => {
                  [name] : type === 'checkbox' ? checked : value
         }})
     }
-    console.log(data)
+
+    function handleSubmit(e){
+        e.preventDefault()
+        setData(data)
+        console.log(data)
+    }
+
+
   return (
     <div>
-        <form className='form-container' >
+        <form className='form-container' onSubmit={handleSubmit} >
             <input 
             type="text" 
             name='name' 
@@ -55,6 +63,8 @@ const StartForm = ({categories}) => {
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
             </select>
+
+        <button type='submit' ><Link>Start</Link></button>
 
         </form>
     </div>
