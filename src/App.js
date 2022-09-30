@@ -1,5 +1,5 @@
 import StartPage from "./Pages/StartPage";
-import Quizz from "./Pages/Quizz";
+import Preferences from './Pages/Preferences';
 import {Route, Routes} from 'react-router-dom';
 import { useEffect } from "react";
 
@@ -9,7 +9,7 @@ function App() {
     <>
         <Routes>
             <Route path='/' element={<StartPage />} />
-            <Route path='/quizz' element={<Quizz />} />
+            <Route path='/Preferences' element={<Preferences />} />
     
           </Routes>
     
