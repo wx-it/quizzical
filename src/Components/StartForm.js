@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const StartForm = ({categories}) => {
-    const [data, setData] = useState({
-        name: '',
-        category: '',
-        difficulty: ''
-    })
+const StartForm = ({categories, data, setData}) => {
+
 
     function handleData(e){
         const{name, value, type, checked} = e.target
@@ -19,14 +15,15 @@ const StartForm = ({categories}) => {
 
     function handleSubmit(e){
         e.preventDefault()
-        setData(data)
-        console.log(data)
+        setData(data => data)
     }
-
 
   return (
     <div>
-        <form className='form-container' onSubmit={handleSubmit} >
+        <form 
+        className='form-container' 
+        onSubmit={handleSubmit} 
+        >
             <input 
             type="text" 
             name='name' 
@@ -45,7 +42,7 @@ const StartForm = ({categories}) => {
             
                 {
                 categories.map((category)=>(
-                        <option key={category.id} value={category.name}>
+                        <option key={category.id} value={category.id}>
                             {category.name}
                             </option>
                     )
@@ -64,7 +61,7 @@ const StartForm = ({categories}) => {
                 <option value="hard">Hard</option>
             </select>
 
-        <button type='submit' ><Link>Start</Link></button>
+        <button type='submit' ><Link to='/Quiz'>Start</Link></button>
 
         </form>
     </div>
