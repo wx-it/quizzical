@@ -6,7 +6,7 @@ const StartPage = (props) => {
         <h2>Quizzical</h2>
         <p>Test your knowledge on various topics</p>
         <button>
-         <Link to='/quizz'>Start Quiz</Link>
+         <Link to='/Preferences'>Start Quiz</Link>
         </button>
     </div>
   )
