@@ -129,3 +129,39 @@ body{
   text-decoration: none;
 
 }
+
+
+
+.quiz-questions-container{
+  border: 1px black solid;
+  height: 100vh;
+}
+
+.quiz-questions{
+  border: 1px red solid;
+  margin: 1rem;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+}
+
+.question{
+  font-size: 14px;
+}
+
+.answers{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  border: 1px green solid;
+}
+
+.answer{
+  border: 1px yellow solid;
+  font-size: 12px;
+  display: block;
+}
+
+.incorrect-answers{
+  display: flex;
+  gap: 1rem;
+}
