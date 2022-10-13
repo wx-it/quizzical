@@ -133,32 +133,37 @@ body{
 
 
 .quiz-questions-container{
-  border: 1px black solid;
-  height: 100vh;
+  background-color: #f5f7fb;
+  border: 1px rgba(0, 0, 0, 0.0001) solid;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .quiz-questions{
-  border: 1px red solid;
+  border-bottom: 1px #dbdef0 solid;
   margin: 1rem;
-  border-radius: 15px;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
 }
 
 .question{
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .answers{
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
-  border: 1px green solid;
+  font-size: 10.24px;
+  font-weight: 500;
 }
 
 .answer{
-  border: 1px yellow solid;
-  font-size: 12px;
-  display: block;
+  border: 1px #4d5b9e solid;
+  border-radius: 8px;
+  padding: 3px 20px;
+  cursor: pointer;
 }
 
 .incorrect-answers{

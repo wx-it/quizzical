@@ -17,7 +17,7 @@ const Quizz = ({data}) => {
       const [questions, setQuestions] = useState([])
 
   return (
-    <div className='quiz-questions-container'>
+    <body className='quiz-questions-container'>
       {questions.map((questions)=>(
           <div className='quiz-questions'>
             <p className='question' >{questions.question}</p>
@@ -32,7 +32,7 @@ const Quizz = ({data}) => {
           </div>
         )
       )}
-    </div>
+    </body>
   )
 }
 
