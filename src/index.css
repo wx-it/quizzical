@@ -164,6 +164,7 @@ body{
   border-radius: 8px;
   padding: 3px 20px;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .incorrect-answers{
