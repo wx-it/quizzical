@@ -1,5 +1,5 @@
 import React from 'react'
-import {nanoid} from 'nanoid'
+//import {nanoid} from 'nanoid'
 import {useState} from 'react'
 
 const Questions = ({questions}) => {
@@ -10,22 +10,35 @@ const Questions = ({questions}) => {
     setColor(prevColor=> !prevColor)
   }
 
-  const Style = {
-    backgroundColor: 'black'
+  //put all answers in an array and randomize them
+  
+  function getAnswers(questions){
+    
   }
+ const allAnswers = questions.map((questions)=>{
+    const answers = []
+    answers.push(questions.incorrect_answers.map((answer) => answer))
+    answers.push(questions.correct_answer)
+    for (let i = answers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = answers[i]
+      answers[i] = answers[j]
+      answers[j] = temp
+    }
+
+ console.log(answers)
+  })
+
+  console.log(allAnswers)
+
 
   return (
     <>
           {questions.map((questions)=>(
-          <div className='quiz-questions' key={nanoid.id}>
-            <p className='question' key={nanoid.id}>{questions.question}</p>
-           <div className="answers" key={nanoid.id}>
-              <p className={color ? {Style} : 'answer'} key={nanoid.id} onClick={changeColor}>{questions.correct_answer}</p>
-            <div className='incorrect-answers' key={nanoid.id}>{questions.incorrect_answers.map((answer)=>{
-              return(
-                <p className='answer incorrect-answer' key={nanoid.id}>{answer}</p>
-              )
-            })}</div>
+          <div className='quiz-questions'>
+            <p className='question'>{questions.question}</p>
+           <div className="answers">
+              {allAnswers}
            </div>
           </div>
         )
