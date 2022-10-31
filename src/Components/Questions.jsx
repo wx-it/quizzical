@@ -12,24 +12,24 @@ const Questions = ({questions}) => {
 
   //put all answers in an array and randomize them
   
-  function getAnswers(questions){
-    
-  }
- const allAnswers = questions.map((questions)=>{
+  function getAnswers(){
     const answers = []
-    answers.push(questions.incorrect_answers.map((answer) => answer))
-    answers.push(questions.correct_answer)
-    for (let i = answers.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = answers[i]
-      answers[i] = answers[j]
-      answers[j] = temp
-    }
+    questions.map((question)=>{
+      let incorrect = question.incorrect_answers;
+      for (let i = 0; i < incorrect.length; i++) {
+        answers.push(incorrect)
+      }
+      let correct = question.correct_answer;
+      for (let i = 0; i < correct.length; i++) {
+        answers.push(correct)
+      }
+     
+    })
+    console.log(answers)
+  }
+  console.log(getAnswers())
 
- console.log(answers)
-  })
 
-  console.log(allAnswers)
 
 
   return (
@@ -38,7 +38,7 @@ const Questions = ({questions}) => {
           <div className='quiz-questions'>
             <p className='question'>{questions.question}</p>
            <div className="answers">
-              {allAnswers}
+              {getAnswers}
            </div>
           </div>
         )
