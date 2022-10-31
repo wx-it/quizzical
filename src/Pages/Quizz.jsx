@@ -11,7 +11,7 @@ const Quizz = ({data}) => {
         const fetchData = await fetch(`https://opentdb.com/api.php?amount=10&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
         const response = await fetchData.json()
         const questionsData = response.results
-        console.log(questionsData)
+        //console.log(questionsData)
         setQuestions(prevQuestions => questionsData)
       }
     

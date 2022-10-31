@@ -1,6 +1,7 @@
 import React from 'react'
 //import {nanoid} from 'nanoid'
 import {useState} from 'react'
+import Answers from './Answers';
 
 const Questions = ({questions}) => {
 
@@ -12,28 +13,13 @@ const Questions = ({questions}) => {
 
   //put all answers in an array and randomize them
   
-  const getAnswers = ()=>{
-    let incorrect;
-    questions.map((question)=>{
-      incorrect = question.incorrect_answers;
-      let correct = question.correct_answer;
-      return incorrect.push(correct)
-    })
-    return incorrect.map((answer)=>(       
-      <p>{answer}</p>
-  ))
-  }
-
-
-
-
   return (
     <>
           {questions.map((questions)=>(
           <div className='quiz-questions'>
             <p className='question'>{questions.question}</p>
            <div className="answers">
-              <getAnswers />
+              <Answers questions = {questions}/>
            </div>
           </div>
         )
