@@ -171,17 +171,8 @@ body{
   gap: 1rem;
 }
 
-.correct-answer{
-  background-color: blue;
-}
-
-
 
 /*change color on click*/
-.dark-answer{
-    border: 1px #4d5b9e solid;
-  border-radius: 8px;
-  padding: 3px 20px;
-  cursor: pointer;
-  background-color: black;
+.active{
+  background-color: red;
 }

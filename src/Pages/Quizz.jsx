@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Questions from '../Components/Questions'
-
 const Quizz = ({data}) => {
     useEffect(()=>{
         dataQuestions()
