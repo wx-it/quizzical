@@ -8,10 +8,10 @@ const Questions = ({questions}) => {
   return (
     <>
           {questions.map((questions)=>(
-          <div className='quiz-questions'>
+          <div className='quiz-questions' key={nanoid()}>
             <p className='question'>{questions.question}</p>
            <div className="answers">
-              <Answers key={nanoid()} questions = {questions}/>
+              <Answers questions = {questions}/>
            </div>
           </div>
         )
