@@ -2,23 +2,20 @@ import React from 'react'
 import { useState } from 'react'
 const Answer = (props) => {
 
-  //toggle answer when answer is clicked
-
   const [answer, setAnswer] = useState(props.state); 
-  //!
   function toggle(){
     setAnswer(prevAnswer=> !prevAnswer)
   }
 
 
-  const Style = {
+  const ToggleColor = {
     backgroundColor: answer ? '#abd5bd' : 'transparent'
   }
 
   return (
     <>
       <p className='answer' 
-         style={Style}
+         style={ToggleColor}
          onClick={toggle}
          >{props.answer}</p>
     </>
