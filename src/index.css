@@ -160,7 +160,6 @@ body{
 }
 
 .answer{
-  border: 1px #4d5b9e solid;
   border-radius: 8px;
   padding: 3px 20px;
   cursor: pointer;

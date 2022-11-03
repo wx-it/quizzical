@@ -9,7 +9,9 @@ const Answer = (props) => {
 
 
   const ToggleColor = {
-    backgroundColor: answer ? '#abd5bd' : 'transparent'
+    backgroundColor: answer ? '#abd5bd' : 'transparent',
+    border: answer ? '1px white solid' : '1px #4d5b9e solid',
+    transition: answer ? '0.5s ease-in' : '0.5s ease-in'
   }
 
   return (
