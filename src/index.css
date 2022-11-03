@@ -171,8 +171,3 @@ body{
   gap: 1rem;
 }
 
-
-/*change color on click*/
-.active{
-  background-color: red;
-}

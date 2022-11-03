@@ -6,16 +6,6 @@ import {nanoid} from 'nanoid'
 
 const Answers = ({questions}) => {
 
-  const[color, setColor] = useState(false)
-
-  function changeColor(){
-    setColor(prevColor=> !prevColor)
-  }
-
-  const Style ={
-    backgroundColor: color ? 'red' : 'transparent'
-  }
-
     function GetAnswer(){
         let incorrect = questions.incorrect_answers
         let correct = questions.correct_answer
@@ -25,9 +15,9 @@ const Answers = ({questions}) => {
         return allAnswers.map((answer)=>(
           <Answer 
           key={nanoid()} 
+          id={nanoid()}
           answer={answer} 
-          Style={Style} 
-          changeColor={changeColor} 
+          state={false}
           />
         ))
     }
