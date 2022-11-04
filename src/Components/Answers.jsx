@@ -7,10 +7,8 @@ import {nanoid} from 'nanoid'
 const Answers = ({questions}) => {
 
     function GetAnswer(){
-        let incorrect = questions.incorrect_answers
-        let correct = questions.correct_answer
-        incorrect.push(correct)
-        let allAnswers = [...new Set(incorrect)] 
+        let answers = questions.incorrect_answers.concat(questions.correct_answer)
+        let allAnswers = [...new Set(answers)] 
         allAnswers.sort(function(a, b){return 0.5 - Math.random()})
         return allAnswers.map((answer)=>(
           <Answer 

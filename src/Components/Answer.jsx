@@ -7,6 +7,7 @@ const Answer = (props) => {
     setAnswer(prevAnswer=> !prevAnswer)
   }
 
+  console.table(answer)
 
   const ToggleColor = {
     backgroundColor: answer ? '#abd5bd' : 'transparent',
