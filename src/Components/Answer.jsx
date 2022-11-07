@@ -4,13 +4,15 @@ const Answer = (props) => {
 
   const [answer, setAnswer] = useState(props.state); 
   function toggle(){
-    setAnswer(prevAnswer=> !prevAnswer)
+    return setAnswer(prevAnswer=> !prevAnswer)
   }
 
-  console.table(answer)
+  //if one answer is true in a row then the other must be automaticaly 
+  //set to false
+  //console.log(answer)
 
   const ToggleColor = {
-    backgroundColor: answer ? '#abd5bd' : 'transparent',
+    backgroundColor: answer ? '#D6DBF5' : 'transparent',
     border: answer ? '1px white solid' : '1px #4d5b9e solid',
     transition: answer ? '0.5s ease-in' : '0.5s ease-in'
   }
