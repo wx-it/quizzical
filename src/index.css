@@ -170,3 +170,9 @@ body{
   gap: 1rem;
 }
 
+
+/*.active{
+  background-color: '#D6DBF5';
+  border: '1px white solid';
+  transition: '0.5s ease-in';
+}*/

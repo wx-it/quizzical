@@ -15,7 +15,6 @@ const Answers = ({questions}) => {
           key={nanoid()} 
           id={nanoid()}
           answer={answer} 
-          state={false}
           />
         ))
     }
