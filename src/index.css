@@ -163,6 +163,8 @@ body{
   border-radius: 8px;
   padding: 5px 20px;
   cursor: pointer;
+  transition: 0.5s ease-in;
+
 }
 
 .incorrect-answers{
@@ -174,5 +176,4 @@ body{
 /*.active{
   background-color: '#D6DBF5';
   border: '1px white solid';
-  transition: '0.5s ease-in';
 }*/
