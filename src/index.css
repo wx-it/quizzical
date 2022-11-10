@@ -164,8 +164,7 @@ body{
   padding: 5px 20px;
   cursor: pointer;
   transition: 0.5s ease-in;
-  border: 1px  red solid;
-
+  border: 1px #4d5b9e solid;
 }
 
 .incorrect-answers{
