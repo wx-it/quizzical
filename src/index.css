@@ -155,13 +155,13 @@ body{
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
-  font-size: 10.24px;
+  font-size: 12px;
   font-weight: 500;
 }
 
 .answer{
   border-radius: 8px;
-  padding: 3px 20px;
+  padding: 5px 20px;
   cursor: pointer;
 }
 

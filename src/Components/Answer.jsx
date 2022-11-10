@@ -7,11 +7,7 @@ const Answer = (props) => {
     return setAnswer(prevAnswer=> !prevAnswer)
   }
 
-  //foreach answer clicked , console log answer clicked
-
-  //if one answer is true in a row then the other must be automaticaly 
-  //set to false
-  console.log(answer)
+  //work on this
 
   const ToggleColor = {
         backgroundColor: answer ? '#D6DBF5' : 'transparent',
