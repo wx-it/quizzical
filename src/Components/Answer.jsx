@@ -1,27 +1,23 @@
 import React from 'react'
-import { useState } from 'react'
 const Answer = (props) => {
 
-  const [answer, setAnswer] = useState(false); 
-  function toggle(){
-    return setAnswer(prevAnswer=> !prevAnswer)
+  const toggle = function (e){
+    const theAnswers = e.target.closest('.answers');
+    const theAnswer = e.target.closest('.answer');
+    const all = theAnswers.querySelectorAll('.answer')
+    if(!theAnswers)return;
+    all.forEach((answer) => answer.classList.remove("active"));
+    theAnswer.classList.add("active");
   }
 
-  //work on this
-
-  const ToggleColor = {
-        backgroundColor: answer ? '#D6DBF5' : 'transparent',
-        border: answer ? '1px white solid' : '1px #4d5b9e solid',
-    }
     
   
 
   return (
     <>
-      <p className='answer' 
-         style={ToggleColor}
+      <button className='answer' 
          onClick={toggle}
-         >{props.answer}</p>
+         >{props.answer}</button>
     </>
   )
 }
