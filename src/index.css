@@ -153,6 +153,7 @@ body{
 
 .answers{
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem 0;
   font-weight: 500;
@@ -190,7 +191,6 @@ body{
   font-size: 15px;
   color: white;
   text-align: center;
-  
 }
 
 
