@@ -8,10 +8,7 @@ const Answer = (props) => {
     if(!theAnswers)return;
     all.forEach((answer) => answer.classList.remove("active"));
     theAnswer.classList.add("active");
-  }
-
-    
-  
+}
 
   return (
     <>

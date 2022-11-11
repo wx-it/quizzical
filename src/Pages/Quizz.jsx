@@ -21,7 +21,7 @@ const Quizz = ({data}) => {
   return (
     <div className='quiz-questions-container'>
     <Questions questions={questions}/>
-    <ResultsButton />
+    <ResultsButton questions ={questions} />
     </div>
   )
 }
