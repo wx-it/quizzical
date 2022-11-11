@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Questions from '../Components/Questions'
+import ResultsButton from '../Components/ResultsButton'
 const Quizz = ({data}) => {
     useEffect(()=>{
         dataQuestions()
@@ -20,6 +21,7 @@ const Quizz = ({data}) => {
   return (
     <div className='quiz-questions-container'>
     <Questions questions={questions}/>
+    <ResultsButton />
     </div>
   )
 }

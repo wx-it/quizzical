@@ -155,7 +155,6 @@ body{
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
-  font-size: 12px;
   font-weight: 500;
 }
 
@@ -165,12 +164,16 @@ body{
   cursor: pointer;
   transition: 0.5s ease-in;
   border: 1px #4d5b9e solid;
+  font-size: 11px;
 }
 
 .incorrect-answers{
   display: flex;
   gap: 1rem;
 }
+
+
+.results-btn
 
 
 .active{
