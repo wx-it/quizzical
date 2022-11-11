@@ -172,8 +172,26 @@ body{
   gap: 1rem;
 }
 
+.results-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
 
-.results-btn
+
+.results-btn button{
+  background-color: #4d5b9e;
+  border: none;
+  width: 193px;
+  height: 52px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  
+}
 
 
 .active{

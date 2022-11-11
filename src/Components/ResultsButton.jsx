@@ -2,11 +2,11 @@ import React from 'react'
 
 const ResultsButton = () => {
   return (
-    <>
-    <button className='results-btn'>
+    <div className='results-btn'>
+    <button>
         Check Answers
     </button>
-    </>
+    </div>
   )
 }
 
