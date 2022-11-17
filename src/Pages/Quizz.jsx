@@ -2,6 +2,11 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import Questions from '../Components/Questions'
 import ResultsButton from '../Components/ResultsButton'
+import { nanoid } from 'nanoid'
+import Answers from '../Components/Answers'
+import Answer from '../Components/Answer'
+
+
 const Quizz = ({data}) => {
     useEffect(()=>{
         dataQuestions()
@@ -18,9 +23,36 @@ const Quizz = ({data}) => {
 
       const [questions, setQuestions] = useState([])
 
+
+
+
+      let all = questions.map((questions)=>(
+        <div className='quiz-questions' key={nanoid()}>
+          <p className='question'>{questions.question}</p>
+         <div className="answers">
+            {
+                [...new Set(
+                  questions.incorrect_answers.concat(questions.correct_answer)
+                )].sort(function(a, b){return 0.5 - Math.random()}).map((answer)=>(
+                  <Answer 
+                  key={nanoid()} 
+                  id={nanoid()}
+                  answer={answer} 
+                  questions = {questions}
+                  />
+                ))
+        
+            }
+         </div>
+        </div>
+      )
+
+      
+    )
+
   return (
     <div className='quiz-questions-container'>
-    <Questions questions={questions}/>
+    <Questions questions={questions} all={all} />
     <ResultsButton questions ={questions} />
     </div>
   )
