@@ -1,14 +1,25 @@
 import React from 'react'
 
-const ResultsButton = ({getCount}) => {
+const ResultsButton = ({count}) => {
 
+  function getCount(props){
+    let correct = props.questions.correct_answer
+    console.log(correct)
+
+      if(props.answer === correct){
+        console.log('Correct');
+       } 
+       else {
+          console.log('Incorrect');
+        }
+  }
+  
 
 
   return (
     <div className='results-btn'>
     <button
-    onClick={getCount}
-    >
+    onClick={count}>
         Check Answers
     </button>
     </div>
