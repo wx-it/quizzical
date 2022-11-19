@@ -22,11 +22,10 @@ const Quizz = ({data}) => {
     
 
       const [questions, setQuestions] = useState([])
-    
-      let allAnswers;
-      let correct;
+      
       
       const toggle = function (e){
+        let correct = questions.map(q => q.correct_answer)
         const theAnswers = e.target.closest('.answers');
         const theAnswer = e.target.closest('.answer');
         const all = theAnswers.querySelectorAll('.answer')
@@ -34,13 +33,22 @@ const Quizz = ({data}) => {
         all.forEach((answer) => answer.classList.remove("active"));
         theAnswer.classList.add("active")
         
+       console.log(correct)
+
+       
+       for (let i = 0; i < correct.length; i++) {
+         const answer = correct[i];
+         if(e.currentTarget.textContent === answer){
+          console.log('clicked')
+         }
+        }
+        
+        
       }
       
-      
     function Answers({questions}){
-      correct = questions.correct_answer
       let answers = questions.incorrect_answers.concat(questions.correct_answer)
-      allAnswers = [...new Set(answers)] 
+      let allAnswers = [...new Set(answers)] 
       allAnswers.sort(function(a, b){return 0.5 - Math.random()})
       
         return allAnswers.map((answer)=>(
@@ -54,12 +62,6 @@ const Quizz = ({data}) => {
         ))
     } 
 
-    function count(){
-    return;
-        
-       
-    }
-    
       
       let all = questions.map((q)=>(
         <div className='quiz-questions' key={nanoid()}>
@@ -70,6 +72,12 @@ const Quizz = ({data}) => {
         </div>
       )
     )
+
+    function count(){
+      console.log('clicked')
+    }
+
+
   return (
     <div className='quiz-questions-container'>
     <Questions questions={questions} all={all} />
