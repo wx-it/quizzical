@@ -8,14 +8,12 @@ import Answer from '../Components/Answer'
 
 
 const Quizz = ({data}) => {
-   
-  
-  useEffect(()=>{
+    useEffect(()=>{
         dataQuestions()
     },[])
     
     const [questions, setQuestions] = useState([])
-    const [score, setScore] = useState(0)
+    let score = 0
 
     const dataQuestions = async() =>{
         const fetchData = await fetch(`https://opentdb.com/api.php?amount=10&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
@@ -24,30 +22,27 @@ const Quizz = ({data}) => {
         //console.log(questionsData)
         setQuestions(prevQuestions => questionsData)
       }
-
-    }
-
-    // toggle answer when clicked + get the correct answer
-    const toggle = function (e, questions){
-      let correct = questions.map(q => q.correct_answer)
-      const theAnswers = e.target.closest('.answers');
-      const theAnswer = e.target.closest('.answer');
-      const allAnswers = theAnswers.querySelectorAll('.answer')
-      if(!theAnswers)return; 
-      allAnswers.forEach((answer) => answer.classList.remove("active"));
-      theAnswer.classList.add("active")
       
-     console.log(correct)
-
-     
-     for (let i = 0; i < correct.length; i++) {
-       const answer = correct[i];
-       if(e.currentTarget.textContent === answer){
-        setScore(score => score++)
+      const toggle = function (e){
+        const theAnswers = e.target.closest('.answers');
+        const theAnswer = e.target.closest('.answer');
+        const all = theAnswers.querySelectorAll('.answer')
+        if(!theAnswers)return; 
+        all.forEach((answer) => answer.classList.remove("active"));
+        theAnswer.classList.add("active")
+        
+        
+          let correct = questions.map(q => q.correct_answer)
+          console.log(correct)
+         for (let i = 0; i < correct.length; i++) {
+           const answer = correct[i];
+           if(e.currentTarget.textContent === answer){
+             score ++
+          }
       }
-    }
 
-    // display all answers
+    }
+      
     function Answers({questions}){
       let answers = questions.incorrect_answers.concat(questions.correct_answer)
       let allAnswers = [...new Set(answers)] 
@@ -55,6 +50,7 @@ const Quizz = ({data}) => {
       
         return allAnswers.map((answer)=>(
           <button
+          type='button'
           className='answer'
           key={nanoid()}
           onClick={toggle}
@@ -64,7 +60,7 @@ const Quizz = ({data}) => {
         ))
     } 
 
-      // get all questions
+      
       let all = questions.map((q)=>(
         <div className='quiz-questions' key={nanoid()}>
           <p className='question'>{q.question}</p>
@@ -75,9 +71,8 @@ const Quizz = ({data}) => {
       )
     )
 
-    //target the results button
     function count(){
-      console.log('clicked')
+      return score
     }
 
 
