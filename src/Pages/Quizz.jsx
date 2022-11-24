@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react'
 import Questions from '../Components/Questions'
 import ResultsButton from '../Components/ResultsButton'
 import { nanoid } from 'nanoid'
-import Answers from '../Components/Answers'
-import Answer from '../Components/Answer'
+
 
 
 const Quizz = ({data}) => {
@@ -72,6 +71,7 @@ const Quizz = ({data}) => {
     )
 
     function count(){
+      console.log(score)
       return score
     }
 
@@ -79,7 +79,7 @@ const Quizz = ({data}) => {
   return (
     <div className='quiz-questions-container'>
     <Questions questions={questions} all={all} />
-    <ResultsButton questions ={questions} count={count} />
+    <ResultsButton questions ={questions} count={count} score={score} />
     </div>
   )
 }
