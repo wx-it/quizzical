@@ -1,24 +1,15 @@
 import React from 'react'
-
-const ResultsButton = () => {
-
-  function getCount(props){
-    let correct = props.questions.correct_answer
-    console.log(correct)
-
-      if(props.answer === correct){
-        console.log('Correct');
-       } 
-       else {
-          console.log('Incorrect');
-        }
-  }
-  
-
+import ResultPopUp from './ResultPopUp'
+const ResultsButton = ({count, score}) => {
 
   return (
-    <div className='results-btn'>
-    <button>
+    <div className='results-container'>
+      <ResultPopUp />
+      
+    <button
+    type='button'
+    onClick={count}
+    >
         Check Answers
     </button>
     </div>
