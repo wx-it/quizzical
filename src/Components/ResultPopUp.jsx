@@ -1,10 +1,12 @@
 import React from 'react'
 
-const ResultPopUp = ({score}) => {
+const ResultPopUp = ({score, Ds}) => {
    // console.log(score)
   return (
-    <div>
-    </div>
+    <>
+       <p className='result'>
+        </p>
+    </>
   )
 }
 

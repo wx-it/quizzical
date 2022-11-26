@@ -10,7 +10,7 @@ const ResultsButton = ({count, score}) => {
     >
         Check Answers
     </button>
-    <ResultPopUp/>
+    <ResultPopUp />
     </div>
   )
 }

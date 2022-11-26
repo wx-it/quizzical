@@ -76,19 +76,10 @@ const Quizz = ({data}) => {
 
     function count(e){
       e.preventDefault()
-      console.log(`you got ${score} points`)
-      let results = `you got ${score} points` 
-      return(
-        <Ds results={results} />
-      )
-    }
-
-    function Ds({results}){
-      return (
-        <p>
-          {results}
-        </p>
-      )
+      let results = `you got ${score} points`
+      let result = document.querySelector('.result')
+      result.textContent = results
+      console.log(result.textContent)
     }
     
 
@@ -96,7 +87,6 @@ const Quizz = ({data}) => {
     <div className='quiz-questions-container'>
     <Questions questions={questions} all={all} />
     <ResultsButton questions ={questions} count={count} score={score} />
-    <Ds/>
     </div>
   )
 }
