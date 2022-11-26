@@ -1,16 +1,16 @@
 import React from 'react'
-
+import ResultPopUp from './ResultPopUp'
 const ResultsButton = ({count, score}) => {
 
   return (
     <div className='results-btn'>
     <button
-    onClick={count}>
+    type='button'
+    onClick={count}
+    >
         Check Answers
     </button>
-
-<p>you got {score} points</p>
-
+    <ResultPopUp/>
     </div>
   )
 }
