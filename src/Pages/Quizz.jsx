@@ -76,7 +76,7 @@ const Quizz = ({data}) => {
 
     function count(e){
       e.preventDefault()
-      let results = `you got ${score} points`
+      let results = `You got ${score}/10`
       let result = document.querySelector('.result')
       result.textContent = results
       console.log(result.textContent)

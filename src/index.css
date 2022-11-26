@@ -173,15 +173,16 @@ body{
   gap: 1rem;
 }
 
-.results-btn{
+.results-container{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
   margin: 2rem 0;
 }
 
 
-.results-btn button{
+.results-container button{
   background-color: #4d5b9e;
   border: none;
   width: 193px;
@@ -191,6 +192,10 @@ body{
   font-size: 15px;
   color: white;
   text-align: center;
+}
+
+.result{
+  font-weight: 600;
 }
 
 

@@ -3,14 +3,15 @@ import ResultPopUp from './ResultPopUp'
 const ResultsButton = ({count, score}) => {
 
   return (
-    <div className='results-btn'>
+    <div className='results-container'>
+      <ResultPopUp />
+      
     <button
     type='button'
     onClick={count}
     >
         Check Answers
     </button>
-    <ResultPopUp />
     </div>
   )
 }
