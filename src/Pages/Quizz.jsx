@@ -13,7 +13,7 @@ const Quizz = ({data}) => {
     
     const [questions, setQuestions] = useState([])
     let score = 0
-  
+  console.log(data.name)
     
     const dataQuestions = async() =>{
         const fetchData = await fetch(`https://opentdb.com/api.php?amount=10&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
@@ -76,7 +76,7 @@ const Quizz = ({data}) => {
 
     function count(e){
       e.preventDefault()
-      let results = `You got ${score}/10`
+      let results = `${score> 5 ? "Congratulations" : "Better Luck Next Time"} ${data.name}, You got ${score}/10`
       let result = document.querySelector('.result')
       result.textContent = results
       console.log(result.textContent)
