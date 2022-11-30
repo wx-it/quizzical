@@ -13,7 +13,6 @@ const Quizz = ({data}) => {
     
     const [questions, setQuestions] = useState([])
     let score = 0
-  console.log(data.name)
     
     const dataQuestions = async() =>{
         const fetchData = await fetch(`https://opentdb.com/api.php?amount=10&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
@@ -33,16 +32,18 @@ const Quizz = ({data}) => {
         theAnswer.classList.add("active")
     }
 
+
     const handleClick = (e)=>{
       e.preventDefault()
       let correct = questions.map(q => q.correct_answer)
       console.log(correct)
-     for (let i = 0; i < correct.length; i++) {
-       const answer = correct[i];
-       if(e.currentTarget.textContent === answer){
-         score ++
-      }
-  }
+  correct.every(answer => {
+    if(e.currentTarget.textContent === answer){
+      score ++
+   } if(e.currentTarget.textContent!==answer) {
+     score--
+   }
+  })
     }
       
     function Answers({questions}){
@@ -52,7 +53,7 @@ const Quizz = ({data}) => {
       
         return allAnswers.map((answer)=>(
           <button
-          type='button'
+          
           className='answer'
           key={answer}
           onClick={(e)=>{toggle(e); handleClick(e)}}
