@@ -37,13 +37,13 @@ const Quizz = ({data}) => {
       e.preventDefault()
       let correct = questions.map(q => q.correct_answer)
       console.log(correct)
-  correct.every(answer => {
-    if(e.currentTarget.textContent === answer){
-      score ++
-   } if(e.currentTarget.textContent!==answer) {
-     score--
+      for (let i = 0; i < correct.length; i++) {
+        const answer = correct[i];
+        if(e.currentTarget.textContent === answer){
+          score ++
+       } 
    }
-  })
+  
     }
       
     function Answers({questions}){
